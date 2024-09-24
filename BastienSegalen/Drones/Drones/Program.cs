@@ -1,3 +1,4 @@
+using System;
 namespace Drones
 {
     internal static class Program
@@ -42,8 +43,29 @@ namespace Drones
 
 
 
+            try
+            {
+                //Drone drone= new Drone();
+                //Drone.MaMethode(5);
+
+                if (fleet.Count() < 10)
+                {
+                    throw new ArgumentException("La valeur de x est inférieure à 10 !");
+                }
+            }
+            catch (ArgumentException e)
+            {
+                Console.WriteLine($"Erreur : {e.Message}");
+            }
             // Démarrage
-            Application.Run(new AirSpace(fleet,bulidings,factorys,stores));
+            try
+            {
+                Application.Run(new AirSpace(fleet, bulidings, factorys, stores));
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Il y a eu une erreur");
+            }
         }
     }
 }
