@@ -1,12 +1,43 @@
 ﻿using Drones.Helpers;
+using System.Security.Cryptography;
 
 namespace Drones
 {
     // Cette partie de la classe Drone définit comment on peut voir un drone
+    public enum EvacuationState
+    {
+        Free, 
+        Evacuating,
+        Evacuated
+    }
+    public interface Iexpellable
+    {
+        public bool Evacuate(Rectangle zone);
 
-    public partial class Drone
+        public void FreeFlight();
+
+        public EvacuationState GetEvacuationState();
+
+    }
+    public partial class Drone : Iexpellable
     {
         private Pen droneBrush = new Pen(new SolidBrush(Color.Purple), 3);
+
+        public bool Evacuate(Rectangle zone)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void FreeFlight()
+        {
+            throw new NotImplementedException();
+        }
+
+        public EvacuationState GetEvacuationState()
+        {
+            
+            throw new NotImplementedException();
+        }
 
         // De manière graphique
         public void Render(BufferedGraphics drawingSpace)
@@ -44,7 +75,7 @@ namespace Drones
     }
     public class Store : Buliding
     {
-        private string openingHours;
+        
 
         private Pen StoreBrush = new Pen(new SolidBrush(Color.Black), 3);
         public new void Render(BufferedGraphics drawingSpace)

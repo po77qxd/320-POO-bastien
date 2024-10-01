@@ -1,4 +1,6 @@
 using System;
+using System.Runtime.CompilerServices;
+
 namespace Drones
 {
     internal static class Program
@@ -41,6 +43,7 @@ namespace Drones
             store.y = 130;
             store.x = 490;
 
+            
 
 
             try
@@ -48,7 +51,7 @@ namespace Drones
                 //Drone drone= new Drone();
                 //Drone.MaMethode(5);
 
-                if (fleet.Count() < 10)
+                if (fleet.Count() > 10)
                 {
                     throw new ArgumentException("La valeur de x est inférieure à 10 !");
                 }

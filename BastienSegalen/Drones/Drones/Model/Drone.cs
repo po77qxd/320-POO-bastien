@@ -1,4 +1,5 @@
-﻿namespace Drones
+﻿using System;
+namespace Drones
 {
     // Cette partie de la classe Drone définit ce qu'est un drone par un modèle numérique
     public partial class Drone
@@ -28,6 +29,8 @@
         public int y;
         public int width;
         public int height;
+
         public string color;
     }
+    
 }
